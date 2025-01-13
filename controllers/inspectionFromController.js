@@ -35,7 +35,7 @@ async function createInspectionForm(req, res){
                 
                 console.log(file)
                 cloudinary.uploader.upload_stream(
-                    {folder: "inspections"}, 
+                    {folder: "inspections" , transformation : {quality : "auto" , width : 800 , height : 800 , crop : "scale" , fetch_format : "auto"}}, 
                     (error, result) => { 
                         if(error) reject(error); 
                         else resolve(result); 
